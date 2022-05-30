@@ -6,6 +6,7 @@
     <!-- <AppCarousel /> -->
 
     <AppInvitation />
+    <BrideAndGroom />
     <AppFooter />
   </div>
 </template>

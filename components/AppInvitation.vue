@@ -100,6 +100,7 @@
         <div class="grid grid-cols-7 w-full">
           <div></div>
           <div></div>
+          <div></div>
           <div
             v-for="i in 30"
             :key="'date' + i"

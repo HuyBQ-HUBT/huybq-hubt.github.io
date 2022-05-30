@@ -30,7 +30,7 @@
             'url(' + require('@/assets/images/save-the-date.jpeg') + ')',
         }"
       >
-        <div class="text-white lg:text-5xl font-greatevibes tracking-widest">Save the date</div>
+        <div class="text-white text-4xl lg:text-5xl font-greatevibes tracking-widest">Save the date</div>
       </div>
       <div
         class="

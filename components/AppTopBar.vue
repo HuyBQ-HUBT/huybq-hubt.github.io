@@ -8,7 +8,7 @@
 
     <div class="flex items-center justify-center">
       <div class="h-[1px] w-8 bg-[#e9e9e9] self-end"></div>
-      <div class="text-xs text-[#797979] mx-1 tracking-wide font-dosis">Just Married</div>
+      <div class="text-sm text-[#797979] mx-1 tracking-wide font-dosis">Just Married</div>
       <div class="h-[1px] w-8 bg-[#e9e9e9] self-end"></div>
     </div>
   </div>
