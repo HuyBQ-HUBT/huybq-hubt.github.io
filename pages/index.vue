@@ -7,6 +7,8 @@
 
     <AppInvitation />
     <BrideAndGroom />
+    <AppVideo />
+    <AppAlbum />
     <AppFooter />
   </div>
 </template>
