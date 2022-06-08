@@ -541,6 +541,7 @@ export default function Home() {
                 alt='story_gif'
                 width={350}
                 height={150}
+                priority
               />
             </div>
 
@@ -575,6 +576,7 @@ export default function Home() {
                   alt='time_gif'
                   width={225}
                   height={175}
+                  priority
                 />
               </div>
 
@@ -615,6 +617,7 @@ export default function Home() {
                 alt='ww_gif'
                 width={350}
                 height={150}
+                priority
               />
             </div>
 
@@ -687,6 +690,7 @@ export default function Home() {
                   alt='rsvp_gif'
                   width={340}
                   height={200}
+                  priority
                 />
               </div>
 
@@ -715,6 +719,7 @@ export default function Home() {
                 alt='ww_gif'
                 width={390}
                 height={110}
+                priority
               />
             </div>
 
@@ -842,6 +847,7 @@ export default function Home() {
               src='/images/footerGif.gif'
               alt='ty_gif'
               layout='fill'
+              priority
             />
           </div>
         </div>
@@ -871,6 +877,7 @@ export default function Home() {
                 alt='music'
                 layout='fill'
                 color='white'
+                priority
               ></Image>
             </div>
           </button>
@@ -890,6 +897,7 @@ export default function Home() {
                 alt='up'
                 layout='fill'
                 color='white'
+                priority
               ></Image>
             </div>
           </button>
