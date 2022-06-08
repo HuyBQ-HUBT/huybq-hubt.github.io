@@ -500,7 +500,13 @@ export default function Home() {
               </b>
             </div>
             <div className='w-[200px] h-[200px] laptop:w-[350px] laptop:h-[350px] relative border-2 border-white rounded-full'>
-              <Image src='/images/couple.png' alt='ty_gif' layout='fill' />
+              <Image
+                src='/images/couple.png'
+                alt='ty_gif'
+                layout='fill'
+                priority
+                className='object-cover'
+              />
             </div>
             <div className='flex flex-col font-casual text-white text-5xl items-center gap-2'>
               {groomAndBride.bride.sortName}
@@ -559,10 +565,7 @@ export default function Home() {
 
         <section id='time'>
           <div
-            className={clsx(
-              styles.parallax,
-              "bg-[url('/images/std.jpeg')]"
-            )}
+            className={clsx(styles.parallax, "bg-[url('/images/std.jpeg')]")}
           >
             <div className='flex-1 bg-black/30 pt-32 laptop:pb-[128px] pb-[64px] px-4 laptop:px-0'>
               <div className='flex justify-center'>
@@ -726,19 +729,106 @@ export default function Home() {
               id efficitur erat, eu mattis nulla." — Méo.`}
             </p>
 
-            <div className='flex flex-col w-full tablet:grid grid-flow-col tablet:grid-flow-row tablet:w-[520px]  laptop:w-[900px] desktop:w-[1200px] laptop:h-[1800px] mx-auto row-auto grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 tablet:px-auto gap-5 break-inside-avoid mt-4 laptop:mt-10'>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
-              <div className='w-[325px] h-[216px] mx-auto target:mx-0 tablet:w-full laptop:h-full rounded-[4px] shadow cursor-pointer hover:shadow-md'></div>
+            {/* <div className='flex flex-col w-full tablet:grid grid-flow-col tablet:grid-flow-row tablet:w-[520px]  laptop:w-[900px] desktop:w-[1200px] laptop:h-[1800px] mx-auto row-auto grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 tablet:px-auto gap-5 break-inside-avoid mt-4 laptop:mt-10'> */}
+            <div className='flex flex-col items-center gap-2 laptop:gap-4 mt-4 laptop:mt-10 relative'>
+              <div className='flex gap-2 laptop:gap-4'>
+                <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/HNH_9914.JPG'
+                    alt='img'
+                    width={320}
+                    height={480}
+                    className='rounded'
+                  ></Image>
+                </div>
+                <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/HNH_0072.JPG'
+                    alt='img'
+                    width={320}
+                    height={480}
+                    className='rounded'
+                  ></Image>
+                </div>
+                <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/HNH_0104.JPG'
+                    alt='img'
+                    width={320}
+                    height={480}
+                    className='rounded'
+                  ></Image>
+                </div>
+              </div>
+
+              <div className='flex gap-2 laptop:gap-4'>
+                <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/HNH_9783.JPG'
+                    alt='img'
+                    width={320}
+                    height={480}
+                    className='rounded'
+                  ></Image>
+                </div>
+                <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/TKK_9538.JPG'
+                    alt='img'
+                    width={320}
+                    height={480}
+                    className='rounded'
+                  ></Image>
+                </div>
+                <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/HNH_9873.JPG'
+                    alt='img'
+                    width={320}
+                    height={480}
+                    className='rounded'
+                  ></Image>
+                </div>
+              </div>
+
+              <div className='flex gap-2 laptop:gap-4'>
+                <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/TKK_9656.JPG'
+                    alt='img'
+                    width={320}
+                    height={480}
+                    className='rounded'
+                  ></Image>
+                </div>
+                <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/HNH_0517.JPG'
+                    alt='img'
+                    width={320}
+                    height={480}
+                    className='rounded'
+                  ></Image>
+                </div>
+                <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/TKK_9623.JPG'
+                    alt='img'
+                    width={320}
+                    height={480}
+                    className='rounded'
+                  ></Image>
+                </div>
+              </div>
+              <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
+                  <Image
+                    src='/images/album/HNH_0080.JPG'
+                    alt='img'
+                    width={992}
+                    height={661}
+                    className='rounded'
+                  ></Image>
+                </div>
             </div>
           </div>
         </section>
