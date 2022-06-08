@@ -345,9 +345,9 @@ export default function Home() {
       }
     });
 
-    return () => {
-      clearInterval(_randNewQuote);
-    };
+    // return () => {
+    //   clearInterval(_randNewQuote);
+    // };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
