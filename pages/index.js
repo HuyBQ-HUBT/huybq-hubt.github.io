@@ -99,63 +99,6 @@ const quotes = [
   },
 ];
 
-class TailwindColor {
-  constructor(options) {
-    const {
-      colors = [
-        'gray',
-        'red',
-        'yellow',
-        'green',
-        'blue',
-        'indigo',
-        'purple',
-        'pink',
-      ],
-      range = [1, 9],
-      prefix = 'bg',
-    } = options || {};
-
-    this.colors = colors;
-    this.range = {
-      min: range[0],
-      max: range[1],
-    };
-    this.prefix = prefix;
-
-    this.tempColors = [];
-  }
-
-  pick() {
-    const number =
-      this.constructor.random(this.range.min, this.range.max) * 100;
-    const indexColor = this.constructor.random(0, this.colors.length - 1);
-    return `${this.prefix}-${this.colors[indexColor]}-${number}`;
-  }
-
-  color(colors = '') {
-    const isArray = Array.isArray(colors);
-    if (!isArray) this.tempColors.push(colors);
-    else colors.forEach((color) => this.tempColors.push(color));
-    return this;
-  }
-
-  add() {
-    this.tempColors.forEach((color) => this.colors.push(color));
-  }
-
-  remove() {
-    this.tempColors.forEach((color) => {
-      const index = this.colors.indexOf(color);
-      if (index >= 0) this.colors.splice(index, 1);
-    });
-  }
-
-  static random(min = 1, max = 9) {
-    return Math.floor(Math.random() * max) + min;
-  }
-}
-
 function getRandomQuote() {
   const index = Math.floor(Math.random() * quotes.length);
   return quotes[index];
@@ -180,7 +123,7 @@ export default function Home() {
   const [events] = useState([
     {
       title: 'Lễ vu quy',
-      time: '07:25 AM - Thứ 5, ngày 30 tháng 06 năm 2022',
+      time: '07:25 AM - Thứ 5, 30/06/2022',
       address: 'Số 158, khu Dân Chủ, Mạo Khê, Đông Triều',
       city: 'Quảng Ninh',
       tel: {
@@ -191,10 +134,11 @@ export default function Home() {
         link: 'https://goo.gl/maps/t7ntAi5NLmJZdHQe6',
         html: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.0911172679566!2d106.59848681493646!3d21.06902269177838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a80e16bf1398b%3A0x32c5d2675552d855!2zMTU4IETDom4gQ2jhu6csIFRULiBN4bqhbyBLaMOqLCB0eC4gxJDDtG5nIFRyaeG7gXUsIFF14bqjbmcgTmluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1654674366735!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       },
+      icon: '/images/party.png',
     },
     {
       title: 'Tiệc mừng lễ vu quy',
-      time: '11:00 AM - Thứ 4, ngày 29 tháng 06 năm 2022',
+      time: '11:00 AM - Thứ 4, 29/06/2022',
       address: 'Nhà hàng Hạnh Hưng, Vườn hoa chéo, KĐT Tân Việt Bắc',
       city: 'Quảng Ninh',
       tel: {
@@ -205,10 +149,11 @@ export default function Home() {
         link: 'https://goo.gl/maps/r86CyMGG1efBuk3W9',
         html: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.42259651519!2d106.59572672543798!3d21.055777247417975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a80ebfd1b1acd%3A0x7d818161a8181943!2zTmjDoCBIw6BuZyBI4bqhbmggSMawbmc!5e0!3m2!1svi!2s!4v1654674490652!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       },
+      icon: '/images/dinner-table.png',
     },
     {
       title: 'Lễ thành hôn',
-      time: '10:05 AM - Thứ 5, ngày 30 tháng 06 năm 2022',
+      time: '10:05 AM - Thứ 5,30/06/2022',
       address: 'Số 51, đường Phạm Hùng, phường Thanh Bình',
       city: 'Hải Dương',
       tel: {
@@ -219,10 +164,11 @@ export default function Home() {
         link: 'https://goo.gl/maps/WwQkv5RRqQMMgnj98',
         html: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.4779976936015!2d106.2913131149348!3d20.933310996405794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31359ba681f0aeb1%3A0xe7599053dd2c8fd1!2zNTEgUGjhuqFtIEjDuW5nLCBQLiBUaGFuaCBUcnVuZywgVGjDoG5oIHBo4buRIEjhuqNpIETGsMahbmcsIEjhuqNpIETGsMahbmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1654674062093!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       },
+      icon: '/images/wedding-couple.png',
     },
     {
       title: 'Tiệc mừng lễ thành hôn',
-      time: '11:00 AM - Thứ 5, ngày 30 tháng 06 năm 2022',
+      time: '11:00 AM - Thứ 5,30/06/2022',
       address:
         'Nhà hàng Miến Hương, số 61 đường Thống Nhất, phường Lê Thanh Nghị',
       city: 'Hải Dương',
@@ -234,6 +180,7 @@ export default function Home() {
         link: 'https://goo.gl/maps/QfuWtuHaZbF9SzDP8',
         html: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.5423022605646!2d106.32196131493465!3d20.93072619649364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31359bba8e473bd3%3A0x595deff9bf26fb40!2zTmjDoCBow6BuZyBNaeG6v24gSMawxqFuZw!5e0!3m2!1svi!2s!4v1654674315310!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       },
+      icon: '/images/party.png',
     },
   ]);
 
@@ -286,6 +233,9 @@ export default function Home() {
       },
       {
         id: 'galleryGif',
+      },
+      {
+        id: 'wishGif',
       },
     ].forEach((e) => {
       const elm = document.getElementById(e.id);
@@ -345,9 +295,9 @@ export default function Home() {
       }
     });
 
-    // return () => {
-    //   clearInterval(_randNewQuote);
-    // };
+    return () => {
+      clearInterval(_randNewQuote);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -635,13 +585,23 @@ export default function Home() {
               lacus neque, viverra quis varius at, finibus sed erat."`}
             </p>
 
-            <div className='flex laptop:flex-row flex-col gap-2 mt-6 laptop:mt-10 justify-evenly px-4'>
+            <div className='flex laptop:flex-row flex-col gap-2 mt-6 laptop:mt-10 justify-center px-4'>
               {events.map((e, i) => {
                 return (
                   <div
                     key={`event-${i}`}
-                    className='flex flex-col text-black w-[calc(100%-16px)] laptop:w-[325px] shadow-sm laptop:shadow-md py-4 rounded'
+                    className='group flex flex-col text-black w-[calc(100%-16px)] laptop:w-[280px] py-4 rounded hover:bg-black/5 px-1'
                   >
+                    <div className='w-[64px] h-[64px] items-center justify-center mx-auto mb-6'>
+                      <div className='flex justify-center py-4 w-[48px] group-hover:w-[50px] transition-all duration-300 ease-in mx-auto'>
+                        <Image
+                          src={e.icon}
+                          alt='icon'
+                          width={56}
+                          height={56}
+                        ></Image>
+                      </div>
+                    </div>
                     <div className='text-center text-xl laptop:text-3xl font-bold font-dosis pb-10'>
                       {e.title}
                     </div>
@@ -739,7 +699,7 @@ export default function Home() {
               <div className='flex gap-2 laptop:gap-4'>
                 <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
                   <Image
-                    src='/images/album/HNH_9914.JPG'
+                    src='/images/album/HNH_9897.JPG'
                     alt='img'
                     width={320}
                     height={480}
@@ -826,14 +786,36 @@ export default function Home() {
                 </div>
               </div>
               <div className='relative transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-crosshair'>
-                  <Image
-                    src='/images/album/HNH_0080.JPG'
-                    alt='img'
-                    width={992}
-                    height={661}
-                    className='rounded'
-                  ></Image>
-                </div>
+                <Image
+                  src='/images/album/HNH_0080.JPG'
+                  alt='img'
+                  width={992}
+                  height={661}
+                  className='rounded'
+                ></Image>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id='wish'>
+          <div
+            className={clsx(
+              styles.parallax,
+              "bg-[url('/images/wish.jpeg')] flex"
+            )}
+          >
+            <div className='flex-1 bg-black/30 py-32 px-4 laptop:px-0 '>
+              <div className='flex justify-center'>
+                <Image
+                  id='wishGif'
+                  src='/images/wishGif.gif'
+                  alt='wish_gif'
+                  width={340}
+                  height={200}
+                  priority
+                />
+              </div>
             </div>
           </div>
         </section>
