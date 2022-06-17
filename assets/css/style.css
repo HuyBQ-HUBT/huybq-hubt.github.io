@@ -97,7 +97,7 @@ Version:        1.0.0
 @import url("../../../../../css-3.css");
 @font-face {
   font-family: 'Futura PT';
-  src: url("../fonts/FuturaPT-Demi.woff2") format("woff2"), url("../fonts/FuturaPT-Demi.woff") format("woff");
+  src: url("../fonts/SFUFuturaHeavyOblique.TTF") format("ttf");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -105,7 +105,7 @@ Version:        1.0.0
 
 @font-face {
   font-family: 'Futura PT';
-  src: url("../fonts/FuturaPT-Heavy.woff2") format("woff2"), url("../fonts/FuturaPT-Heavy.woff") format("woff");
+  src: url("../fonts/SFUFuturaBoldOblique.TTF") format("ttf");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -113,7 +113,7 @@ Version:        1.0.0
 
 @font-face {
   font-family: 'Futura PT';
-  src: url("../fonts/FuturaPT-Medium.woff2") format("woff2"), url("../fonts/FuturaPT-Medium.woff") format("woff");
+  src: url("../fonts/SFUFuturaObliqueTTF.TTF") format("ttf");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -125,7 +125,7 @@ html {
 }
 
 :root {
-  scroll-behavior: unset;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -3288,7 +3288,7 @@ img {
 }
 
 .wpo-header-style-3 #navbar > ul > li > a:before {
-  background: #fff;
+  /* background: #fff; */
 }
 
 .wpo-header-style-3 #navbar > ul > li > a:hover {
