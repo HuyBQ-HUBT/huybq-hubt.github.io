@@ -903,45 +903,46 @@
         WHEN DOCUMENT LOADING
     ==========================================================================*/
   $(window).on('load', function () {
-    $.get('https://e815-1-52-86-187.ap.ngrok.io/wish-list', (data) => {
-      let list = ''
-      for (let i = 0; i < data.length; i++) {
-        const {name, wish} = data[i];
-        list += `<div class="wpo-testimonials-item">
-        <p>
-          ${wish}
-        </p>
-        <div class="wpo-testimonial-info">
-          <div class="wpo-testimonial-info-img">
-            <img src="assets/images/testimonial/img-1.jpg" alt="" />
-          </div>
-          <div class="wpo-testimonial-info-text">
-            <h5>${name}</h5>
-            <span>Wedding 12/12/19</span>
-          </div>
-        </div>
-      </div>`
-      }
-      $('#wishlist').append(list)
-      $('.wpo-testimonials-active').owlCarousel({
-        autoplay: false,
-        smartSpeed: 300,
-        margin: 30,
-        loop: true,
-        fade: true,
-        autoplayHoverPause: true,
-        dots: true,
-        nav: false,
-        items: 1,
-      });
-      preloader();
+    // $.get('https://e815-1-52-86-187.ap.ngrok.io/wish-list', (data) => {
+    //   let list = ''
+    //   for (let i = 0; i < data.length; i++) {
+    //     const {name, wish} = data[i];
+    //     list += `<div class="wpo-testimonials-item">
+    //     <p>
+    //       ${wish}
+    //     </p>
+    //     <div class="wpo-testimonial-info">
+    //       <div class="wpo-testimonial-info-img">
+    //         <img src="assets/images/testimonial/img-1.jpg" alt="" />
+    //       </div>
+    //       <div class="wpo-testimonial-info-text">
+    //         <h5>${name}</h5>
+    //         <span>Wedding 12/12/19</span>
+    //       </div>
+    //     </div>
+    //   </div>`
+    //   }
+    //   $('#wishlist').append(list)
+    //   $('.wpo-testimonials-active').owlCarousel({
+    //     autoplay: false,
+    //     smartSpeed: 300,
+    //     margin: 30,
+    //     loop: true,
+    //     fade: true,
+    //     autoplayHoverPause: true,
+    //     dots: true,
+    //     nav: false,
+    //     items: 1,
+    //   });
+      
+    // });
+    preloader();
 
       sortingGallery();
 
       toggleMobileNavigation();
 
       smallNavFunctionality();
-    });
   });
 
   /*==========================================================================
