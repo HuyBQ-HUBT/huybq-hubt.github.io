@@ -214,10 +214,7 @@
     if ($('.preloader').length) {
       $('.preloader')
         .delay(100)
-        .fadeOut(500, function () {
-          //active wow
-          wow.init();
-        });
+        .fadeOut(500);
     }
   }
 
@@ -240,39 +237,6 @@
       openEffect: 'elastic',
       closeEffect: 'elastic',
       wrapCSS: 'project-fancybox-title-style',
-    });
-  }
-
-  /*------------------------------------------
-        = POPUP YOUTUBE, VIMEO, GMAPS
-    -------------------------------------------*/
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-    type: 'iframe',
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
-    fixedContentPos: false,
-  });
-
-  /*------------------------------------------
-        = POPUP VIDEO
-    -------------------------------------------*/
-  if ($('.video-btn').length) {
-    $('.video-btn').on('click', function () {
-      $.fancybox({
-        href: this.href,
-        type: $(this).data('type'),
-        title: this.title,
-        helpers: {
-          title: { type: 'inside' },
-          media: {},
-        },
-
-        beforeShow: function () {
-          $('.fancybox-wrap').addClass('gallery-fancybox');
-        },
-      });
-      return false;
     });
   }
 
@@ -410,75 +374,6 @@
   }
 
   /*------------------------------------------
-        = Header search toggle
-    -------------------------------------------*/
-  if ($('.header-search-form-wrapper').length) {
-    var searchToggleBtn = $('.search-toggle-btn');
-    var searchToggleBtnIcon = $('.search-toggle-btn i');
-    var searchContent = $('.header-search-form');
-    var body = $('body');
-
-    searchToggleBtn.on('click', function (e) {
-      searchContent.toggleClass('header-search-content-toggle');
-      searchToggleBtnIcon.toggleClass('fi flaticon-search fi ti-close');
-      e.stopPropagation();
-    });
-
-    body
-      .on('click', function () {
-        searchContent.removeClass('header-search-content-toggle');
-      })
-      .find(searchContent)
-      .on('click', function (e) {
-        e.stopPropagation();
-      });
-  }
-
-  /*------------------------------------------
-        = Header shopping cart toggle
-    -------------------------------------------*/
-  if ($('.mini-cart').length) {
-    var cartToggleBtn = $('.cart-toggle-btn');
-    var cartContent = $('.mini-cart-content');
-    var cartCloseBtn = $('.mini-cart-close');
-    var body = $('body');
-
-    cartToggleBtn.on('click', function (e) {
-      cartContent.toggleClass('mini-cart-content-toggle');
-      e.stopPropagation();
-    });
-
-    cartCloseBtn.on('click', function (e) {
-      cartContent.removeClass('mini-cart-content-toggle');
-      e.stopPropagation();
-    });
-
-    body
-      .on('click', function () {
-        cartContent.removeClass('mini-cart-content-toggle');
-      })
-      .find(cartContent)
-      .on('click', function (e) {
-        e.stopPropagation();
-      });
-  }
-
-  /*------------------------------------------
-        = RECENT CASE SECTION SHOW HIDE
-    -------------------------------------------*/
-  if ($('.service-thumbs').length) {
-    $('.service-thumb').on('click', function (e) {
-      e.preventDefault();
-      var target = $($(this).attr('data-case'));
-      $('.service-thumb').removeClass('active-thumb');
-      $(this).addClass('active-thumb');
-      $('.service-content .service-data').hide(0);
-      $('.service-data').fadeOut(300).removeClass('active-service-data');
-      $(target).fadeIn(300).addClass('active-service-data');
-    });
-  }
-
-  /*------------------------------------------
         = Testimonial SLIDER
     -------------------------------------------*/
   // if ($('.wpo-testimonials-active').length) {
@@ -536,38 +431,6 @@
   }
 
   /*------------------------------------------
-        = PARTNERS SLIDER
-    -------------------------------------------*/
-  if ($('.partners-slider').length) {
-    $('.partners-slider').owlCarousel({
-      autoplay: true,
-      smartSpeed: 300,
-      margin: 30,
-      loop: true,
-      autoplayHoverPause: true,
-      dots: false,
-      arrows: false,
-      nav: false,
-      responsive: {
-        0: {
-          items: 2,
-        },
-
-        550: {
-          items: 3,
-        },
-
-        992: {
-          items: 4,
-        },
-
-        1200: {
-          items: 5,
-        },
-      },
-    });
-  }
-  /*------------------------------------------
     wpo-service-active SLIDER
     -------------------------------------------*/
   if ($('.wpo-service-active').length) {
@@ -611,149 +474,6 @@
   }
 
   /*------------------------------------------
-    wpo-service-active SLIDER
-    -------------------------------------------*/
-  if ($('.static-hero-slide-img').length) {
-    $('.static-hero-slide-img').owlCarousel({
-      autoplay: true,
-      smartSpeed: 300,
-      margin: 10,
-      loop: true,
-      autoplayHoverPause: true,
-      dots: false,
-      arrows: false,
-      nav: true,
-      navText: [
-        '<i class="fi flaticon-left-arrow"></i>',
-        '<i class="fi flaticon-right-arrow-1"></i>',
-      ],
-      responsive: {
-        0: {
-          items: 1,
-          dots: true,
-          arrows: false,
-          nav: false,
-        },
-
-        575: {
-          items: 1,
-        },
-        767: {
-          items: 1,
-        },
-
-        992: {
-          items: 2,
-        },
-
-        1200: {
-          items: 3,
-        },
-      },
-    });
-  }
-
-  /*------------------------------------------
-    product-active
-    -------------------------------------------*/
-  if ($('.product-active').length) {
-    $('.product-active').owlCarousel({
-      autoplay: true,
-      smartSpeed: 300,
-      margin: 30,
-      loop: true,
-      autoplayHoverPause: true,
-      dots: false,
-      arrows: false,
-      nav: true,
-      navText: [
-        '<i class="fi flaticon-left-arrow"></i>',
-        '<i class="fi flaticon-right-arrow-1"></i>',
-      ],
-      responsive: {
-        0: {
-          items: 1,
-          dots: true,
-          arrows: false,
-          nav: false,
-        },
-
-        575: {
-          items: 1,
-        },
-        767: {
-          items: 2,
-        },
-
-        992: {
-          items: 3,
-        },
-
-        1200: {
-          items: 5,
-        },
-      },
-    });
-  }
-
-  /*------------------------------------------
-        = POST SLIDER
-    -------------------------------------------*/
-  if ($('.post-slider'.length)) {
-    $('.post-slider').owlCarousel({
-      mouseDrag: false,
-      smartSpeed: 500,
-      margin: 30,
-      loop: true,
-      nav: true,
-      navText: [
-        '<i class="fi ti-arrow-left"></i>',
-        '<i class="fi ti-arrow-right"></i>',
-      ],
-      dots: false,
-      items: 1,
-    });
-  }
-
-  /*------------------------------------------
-        = SHOP DETAILS PAGE PRODUCT SLIDER
-    -------------------------------------------*/
-  if ($('.shop-single-slider').length) {
-    $('.slider-for').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      fade: true,
-      asNavFor: '.slider-nav',
-    });
-    $('.slider-nav').slick({
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      asNavFor: '.slider-for',
-      vertical: true,
-      verticalSwiping: true,
-      focusOnSelect: true,
-      arrows: false,
-
-      responsive: [
-        {
-          breakpoint: 500,
-          settings: {
-            slidesToShow: 5,
-            infinite: true,
-          },
-        },
-        {
-          breakpoint: 400,
-          settings: {
-            slidesToShow: 5,
-          },
-        },
-      ],
-    });
-  }
-
-  /*------------------------------------------
         = COUNTDOWN CLOCK
     -------------------------------------------*/
   if ($('#clock').length) {
@@ -779,50 +499,6 @@
       verticalbuttons: true,
     });
   }
-
-  /*----------------------------
-        = SHOP PRICE SLIDER
-    ------------------------------ */
-  if ($('#slider-range').length) {
-    $('#slider-range').slider({
-      range: true,
-      min: 12,
-      max: 200,
-      values: [0, 100],
-      slide: function (event, ui) {
-        $('#amount').val('$' + ui.values[0] + ' - $' + ui.values[1]);
-      },
-    });
-
-    $('#amount').val(
-      '$' +
-        $('#slider-range').slider('values', 0) +
-        ' - $' +
-        $('#slider-range').slider('values', 1)
-    );
-  }
-
-  /*-----------------------
-       cart-plus-minus-button 
-     -------------------------*/
-  $('.cart-plus-minus').append(
-    '<div class="dec qtybutton">-</div><div class="inc qtybutton">+</div>'
-  );
-  $('.qtybutton').on('click', function () {
-    var $button = $(this);
-    var oldValue = $button.parent().find('input').val();
-    if ($button.text() == '+') {
-      var newVal = parseFloat(oldValue) + 1;
-    } else {
-      // Don't allow decrementing below zero
-      if (oldValue > 0) {
-        var newVal = parseFloat(oldValue) - 1;
-      } else {
-        newVal = 0;
-      }
-    }
-    $button.parent().find('input').val(newVal);
-  });
 
   /*------------------------------------------
         = BACK TO TOP BTN SETTING
@@ -883,8 +559,8 @@
               $('#c-success').slideUp('slow');
             }, 3000);
             form.reset();
-            location.replace(`${window.location.href.split('#')[0]}#wishlist`)
-            location.reload()
+            location.replace(`${window.location.href.split('#')[0]}#wishlist`);
+            location.reload();
           },
           error: function () {
             $('#c-loader').hide();
@@ -902,7 +578,7 @@
   /*==========================================================================
         WHEN DOCUMENT LOADING
     ==========================================================================*/
-  $(window).on('load', function () {
+  $(window).on('DOMContentLoaded', function () {
     // $.get('https://e815-1-52-86-187.ap.ngrok.io/wish-list', (data) => {
     //   let list = ''
     //   for (let i = 0; i < data.length; i++) {
@@ -934,15 +610,29 @@
     //     nav: false,
     //     items: 1,
     //   });
-      
+
     // });
+    $('.wpo-testimonials-active').owlCarousel({
+      autoplay: false,
+      smartSpeed: 300,
+      margin: 30,
+      loop: true,
+      fade: true,
+      autoplayHoverPause: true,
+      dots: true,
+      nav: false,
+      items: 1,
+    });
+
+    wow.init();
+
     preloader();
 
-      sortingGallery();
+    sortingGallery();
 
-      toggleMobileNavigation();
+    toggleMobileNavigation();
 
-      smallNavFunctionality();
+    smallNavFunctionality();
   });
 
   /*==========================================================================
