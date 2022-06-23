@@ -212,9 +212,7 @@
     -------------------------------------------*/
   function preloader() {
     if ($('.preloader').length) {
-      $('.preloader')
-        .delay(100)
-        .fadeOut(500);
+      $('.preloader').delay(100).fadeOut(500);
     }
   }
 
@@ -303,19 +301,19 @@
   /*------------------------------------------
         = MASONRY GALLERY SETTING
     -------------------------------------------*/
-  function masonryGridSetting() {
-    if ($('.masonry-gallery').length) {
-      var $grid = $('.masonry-gallery').masonry({
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-item',
-        percentPosition: true,
-      });
+  // function masonryGridSetting() {
+  //   if ($('.masonry-gallery').length) {
+  //     var $grid = $('.masonry-gallery').masonry({
+  //       itemSelector: '.grid-item',
+  //       columnWidth: '.grid-item',
+  //       percentPosition: true,
+  //     });
 
-      $grid.imagesLoaded().progress(function () {
-        $grid.masonry('layout');
-      });
-    }
-  }
+  //     $grid.imagesLoaded().progress(function () {
+  //       $grid.masonry('layout');
+  //     });
+  //   }
+  // }
 
   // masonryGridSetting();
 
@@ -575,10 +573,50 @@
     });
   }
 
+  function shuffle(array) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  }
+
   /*==========================================================================
         WHEN DOCUMENT LOADING
     ==========================================================================*/
   $(window).on('DOMContentLoaded', function () {
+    // const ids = [
+    //   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    //   22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+    // ];
+    // const shuffledIds = shuffle(ids).slice(0, 12);
+
+    // let list = '';
+    // shuffledIds.forEach((id) => {
+    //   list += `
+    //   <div class="grid">
+    //     <div class="img-holder">
+    //       <img src="assets/images/album/${id}.jpg" alt="" />
+    //       <div class="hover-content">
+    //         <span>Hà Nội - Jun 2022</span>
+    //       </div>
+    //     </div>
+    //   </div>`;
+    // });
+    // $('#gallery').append(list)
+
     // $.get('https://e815-1-52-86-187.ap.ngrok.io/wish-list', (data) => {
     //   let list = ''
     //   for (let i = 0; i < data.length; i++) {
