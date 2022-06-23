@@ -164,14 +164,13 @@ img {
 }
 .contact-validation-active #c-success,
 .contact-validation-active #success {
-  background-color: #009a00;
-  border-left: 5px solid green;
   margin-bottom: 5px;
+  color: #29395b;
 }
 .contact-validation-active #c-error,
 .contact-validation-active #error {
-  background-color: #ff1a1a;
-  border-left: 5px solid red;
+  color: #ff1a1a;
+  /* border-left: 5px solid red; */
 }
 @-webkit-keyframes rotating {
   from {
@@ -11268,5 +11267,21 @@ img {
 
   .address {
     flex: 1 0 0%;
+  }
+}
+.qr-code-left {
+  display: flex;
+  justify-content: flex-end;
+}
+.qr-code-right {
+  display: flex;
+}
+@media (max-width: 991px) {
+  .qr-code-left {
+    justify-content: center;
+  }
+
+  .qr-code-right {
+    justify-content: center;
   }
 }

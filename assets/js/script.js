@@ -548,7 +548,7 @@
       submitHandler: function (form) {
         $.ajax({
           type: 'POST',
-          url: 'https://e815-1-52-86-187.ap.ngrok.io/wish',
+          url: 'https://script.google.com/macros/s/AKfycbzbx6OX1e0_uDLWLqGWuse_X1G3R6mhcjaftuw1OHzOExDccb0L8CbgBDM3rfPHFUmN/exec',
           data: $(form).serialize(),
           success: function () {
             $('#c-loader').hide();
@@ -557,8 +557,6 @@
               $('#c-success').slideUp('slow');
             }, 3000);
             form.reset();
-            location.replace(`${window.location.href.split('#')[0]}#wishlist`);
-            location.reload();
           },
           error: function () {
             $('#c-loader').hide();
@@ -617,50 +615,51 @@
     // });
     // $('#gallery').append(list)
 
-    // $.get('https://e815-1-52-86-187.ap.ngrok.io/wish-list', (data) => {
-    //   let list = ''
-    //   for (let i = 0; i < data.length; i++) {
-    //     const {name, wish} = data[i];
-    //     list += `<div class="wpo-testimonials-item">
-    //     <p>
-    //       ${wish}
-    //     </p>
-    //     <div class="wpo-testimonial-info">
-    //       <div class="wpo-testimonial-info-img">
-    //         <img src="assets/images/testimonial/img-1.jpg" alt="" />
-    //       </div>
-    //       <div class="wpo-testimonial-info-text">
-    //         <h5>${name}</h5>
-    //         <span>Wedding 12/12/19</span>
-    //       </div>
-    //     </div>
-    //   </div>`
-    //   }
-    //   $('#wishlist').append(list)
-    //   $('.wpo-testimonials-active').owlCarousel({
-    //     autoplay: false,
-    //     smartSpeed: 300,
-    //     margin: 30,
-    //     loop: true,
-    //     fade: true,
-    //     autoplayHoverPause: true,
-    //     dots: true,
-    //     nav: false,
-    //     items: 1,
-    //   });
-
+    $.get(
+      'https://script.google.com/macros/s/AKfycbzbx6OX1e0_uDLWLqGWuse_X1G3R6mhcjaftuw1OHzOExDccb0L8CbgBDM3rfPHFUmN/exec?page=1&limit=5',
+      (response) => {
+        const { data } = response;
+        debugger
+        let list = '';
+        for (let i = 0; i < data.length; i++) {
+          const { name, wish, time } = data[i];
+          list += `<div class="wpo-testimonials-item">
+        <p>
+          ${wish}
+        </p>
+        <div class="wpo-testimonial-info">
+          <div class="wpo-testimonial-info-text">
+            <h5>${name}</h5>
+            <span>${new Date(time).toLocaleString()}</span>
+          </div>
+        </div>
+      </div>`;
+        }
+        $('#wishlist').append(list);
+        $('.wpo-testimonials-active').owlCarousel({
+          autoplay: false,
+          smartSpeed: 300,
+          margin: 30,
+          loop: true,
+          fade: true,
+          autoplayHoverPause: true,
+          dots: true,
+          nav: false,
+          items: 1,
+        });
+      }
+    );
+    // $('.wpo-testimonials-active').owlCarousel({
+    //   autoplay: false,
+    //   smartSpeed: 300,
+    //   margin: 30,
+    //   loop: true,
+    //   fade: true,
+    //   autoplayHoverPause: true,
+    //   dots: true,
+    //   nav: false,
+    //   items: 1,
     // });
-    $('.wpo-testimonials-active').owlCarousel({
-      autoplay: false,
-      smartSpeed: 300,
-      margin: 30,
-      loop: true,
-      fade: true,
-      autoplayHoverPause: true,
-      dots: true,
-      nav: false,
-      items: 1,
-    });
 
     wow.init();
 
